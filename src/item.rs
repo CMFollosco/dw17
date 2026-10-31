@@ -40,7 +40,11 @@ impl Item {
     /// assert_eq!(item.price_dollars(), 1.25);
     /// ```
     pub fn price_dollars(&self) -> f64 {
-        let cents = self.price_cents as f64
-        cents / 100.0
+        self.price_cents as f64 / 100.0
     }
+}
+
+// Free function expected by lib.rs
+pub fn new(code: &str, name: &str, price_cents: u32) -> Item {
+    Item::new(code, name, price_cents)
 }
